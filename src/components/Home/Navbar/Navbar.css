@@ -1,0 +1,14 @@
+.nav-link{
+    font-size: 15px;
+}
+
+.logo{
+    height: 48px;
+}
+
+.user-logo{
+    width: 30px;
+    border-radius: 100%;
+    margin: 0;
+    padding: 0;
+}
