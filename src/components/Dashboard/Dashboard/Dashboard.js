@@ -15,13 +15,13 @@ const Dashboard = () => {
                 <SideBar />
             </div>
             <div className="col-md-10">
-                <DashboardNavbar />
+                {/* <DashboardNavbar />
                 <OrderForm />
-                {/* <Order />
+                {/* <Order /> */}
                 <DashboardNavbar />
                 <div className="service-list">
                     <h2>Welcome to Dashboard Mr. {loggedInUser.name} </h2>
-                </div> */}
+                </div>
             </div>
         </section>
     );

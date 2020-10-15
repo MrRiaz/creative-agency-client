@@ -29,7 +29,7 @@ const Navbar = () => {
                             <Link to="/" className="nav-link ml-4 py-3">Our Team </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/dashboard" className="nav-link ml-4 py-3">Contact Us </Link>
+                            <Link to="/dashboard" className="nav-link ml-4 py-3">Dashboard</Link>
                         </li>
                         <div>
                             {

@@ -1,64 +1,52 @@
 import React from 'react';
 import { useContext } from 'react';
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../../App';
 
 const ReviewForm = () => {
     const {login} = useContext(UserContext);
     const [loggedInUser, setLoggedInUser] = login;
 
-    const [info, setInfo] = useState({});
-    const [file, setFile] = useState(null);
-
-    const handleBlur = e => {
-        const newInfo = {...info};
-        newInfo[e.target.name] = e.target.value;
-        setInfo(newInfo);
-    }
-
-    const handleFileChange = e => {
-        const newFile = e.target.files[0];
-        setFile(newFile);
-    }
-
-    const handleSubmit = () => {
-        const formData = new FormData()
-        console.log(info)
-        formData.append('file', file);
-        formData.append('name', info.name);
-        formData.append('designation', info.designation);
-        formData.append('description', info.description);
+    const { register, handleSubmit, errors } = useForm();
+    
+    const onSubmit = data => {
+        const newData = {...data, ...loggedInUser};
 
         fetch('http://localhost:5000/postReview', {
             method: 'POST',
-            body: formData
+            headers: {'content-Type': 'application/json' },
+            body: JSON.stringify(newData)
         })
-        .then(response => response.json())
+        .then(result => result.json())
         .then(success => {
-            // if(success){
-            //     alert('Your review posted successfully');
-            // }
-            console.log(success);
+            if(success){
+                alert('Your review posted successfully');
+            }
         })
-    }
+    };
 
     return (
         <div className="col-md-7">
-            <form onSubmit={handleSubmit}>
-                    <div class="form-group">
-                        <input onBlur={handleBlur} type="text" class="form-control" name="name"  placeholder="Your name" />
-                    </div>
-                    <div class="form-group">
-                        <input onBlur={handleBlur} type="text" class="form-control" name="designation"  placeholder="Your Designation" />
-                    </div>
-                    <div class="form-group">
-                        <input onBlur={handleBlur} type="text" class="form-control" name="description" placeholder="Description" />
-                    </div>
-                    <div class="form-group">
-                        <input onChange={handleFileChange} type="file" class="form-control-file" />
-                    </div>
-                        <input value="Send" type="submit" class="btn px-4" />
-                </form>
+            <form className="px-4 pt-4" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-group">
+                    <input type="text" defaultValue={loggedInUser.name} ref={register({ required: true })} name="name" placeholder="Your Name" className="form-control" />
+                    {errors.name && <span className="text-danger">This field is required</span>}
+                </div>
+
+                <div className="form-group">
+                    <input ref={register({ required: true })} className="form-control" name="designation" placeholder="Your Company's Name, Designation" type="text" />
+                    {errors.designation && <span className="text-danger">This field is required</span>}
+                </div>
+
+                <div className="form-group">
+                    <input ref={register({ required: true })} className="form-control" name="description" placeholder="Description" type="text" />
+                    {errors.description && <span className="text-danger">This field is required</span>}
+                </div>
+
+                <div className="form-group text-right mb-1">
+                    <button type="submit" className="btn submit">Send</button>
+                </div>
+            </form>
         </div>
     );
 };

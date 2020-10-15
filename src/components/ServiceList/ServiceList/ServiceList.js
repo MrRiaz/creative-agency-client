@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { useEffect } from 'react';
+import { UserContext } from '../../../App';
 import DashboardNavbar from '../../Dashboard/DashboardNavbar/DashboardNavbar';
 import SideBar from '../../Dashboard/SideBar/SideBar';
 import SList from '../SList/SList';
 import './ServiceList.css';
 
 const ServiceList = () => {
+    const {login} = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = login;
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/checkProduct')
+        fetch('http://localhost:5000/checkProduct?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data => {
             setOrders(data);

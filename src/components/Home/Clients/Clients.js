@@ -36,7 +36,8 @@ const Clients = () => {
         fetch("http://localhost:5000/showreview")
         .then(res => res.json())
         .then(data => {
-            setClientsFeedback(data)
+            setClientsFeedback(data);
+            console.log(data);
         })
     }, [])
 

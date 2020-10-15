@@ -5,7 +5,7 @@ import './Service.css';
 const Service = ({service}) => {
     return (
         <div className="col-md-4 my-3">
-            <Link to="/dashboard">
+            <Link to="/addOrder">
                 <div className="service-card text-center">
                     {
                         service.image ? <img className="card-img" src={`data:image/jpeg;base64,${service.image.img}`} alt=""/> 
