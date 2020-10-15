@@ -3,12 +3,10 @@
 }
 
 .logo{
-    height: 48px;
+    width: 150px;
 }
 
 .user-logo{
     width: 30px;
     border-radius: 100%;
-    margin: 0;
-    padding: 0;
 }

@@ -8,6 +8,14 @@ import {
 import Home from './components/Home/Home/Home';
 import { useState } from 'react';
 import Login from './components/Login/Login/Login';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import NoMatch from './components/Home/NoMatch/NoMatch';
+import Order from './components/Dashboard/Order/Order/Order';
+import ServiceList from './components/ServiceList/ServiceList/ServiceList';
+import Review from './components/Dashboard/Review/Review/Review';
+import AddAdmin from './components/Dashboard/AddAdmin/AddAdmin/AddAdmin';
+import AddService from './components/Dashboard/AddService/AddService/AddService';
 
 export const UserContext = createContext();
 
@@ -25,8 +33,29 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/">
+        <PrivateRoute path="/dashboard">
+          <Dashboard />
+        </PrivateRoute>
+        {/* <PrivateRoute path="/addOrder">
+          <Order />
+        </PrivateRoute> */}
+        <Route path="/checkProduct">
+          <ServiceList />
+        </Route>
+        <Route path="/reviewAService">
+          <Review />
+        </Route>
+        <Route path="/addService">
+          <AddService />
+        </Route>
+        <Route path="/makeAdmin">
+          <AddAdmin />
+        </Route>
+        <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="*">
+          <NoMatch />
         </Route>
       </Switch>
     </Router>

@@ -1,0 +1,6 @@
+.sidebar{
+    position: fixed;
+}
+.sidebar span:hover {
+    transform: scale(1.5);
+}
