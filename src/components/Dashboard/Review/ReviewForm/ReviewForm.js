@@ -12,7 +12,7 @@ const ReviewForm = () => {
     const onSubmit = data => {
         const newData = {...data, ...loggedInUser};
 
-        fetch('http://localhost:5000/postReview', {
+        fetch('https://evening-sea-61964.herokuapp.com/postReview', {
             method: 'POST',
             headers: {'content-Type': 'application/json' },
             body: JSON.stringify(newData)
@@ -44,7 +44,7 @@ const ReviewForm = () => {
                 </div>
 
                 <div className="form-group text-right mb-1">
-                    <button type="submit" className="btn submit">Send</button>
+                    <button type="submit" className="btn px-4">Send</button>
                 </div>
             </form>
         </div>

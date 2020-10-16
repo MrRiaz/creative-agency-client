@@ -13,26 +13,33 @@ const ServiceList = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/checkProduct?email='+loggedInUser.email)
+        fetch('https://evening-sea-61964.herokuapp.com/checkProduct?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data => {
             setOrders(data);
-            console.log(data);
         })
         .catch(err => console.log(err))
     }, [])
 
+
+    const style = {
+        backgroundColor: '#F4F7FC',
+        height: '88vh'
+    }
+
     return (
-        <section className="container-fluid row">
-            <div className="col-md-2">
-                <SideBar />
-            </div>
-            <div className="col-md-10">
-                <DashboardNavbar />
-                <div className="row">
-                    {
-                        orders.map(order => <SList order={order}> </SList>)
-                    }
+        <section className="container-fluid">
+            <DashboardNavbar />
+            <div className="row">
+                <div className="col-md-2">
+                    <SideBar />
+                </div>
+                <div style={style} className="col-md-10">
+                    <div className="row">
+                        {
+                            orders.map(order => <SList order={order}> </SList>)
+                        }
+                    </div>
                 </div>
             </div>
         </section>

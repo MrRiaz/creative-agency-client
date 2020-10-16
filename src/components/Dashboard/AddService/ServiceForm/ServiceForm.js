@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ServiceForm.css';
 
 const ServiceForm = () => {
     const [info, setInfo] = useState({});
@@ -21,7 +22,7 @@ const ServiceForm = () => {
         formData.append('description', info.description);
         formData.append('title', info.title);
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://evening-sea-61964.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
@@ -34,22 +35,27 @@ const ServiceForm = () => {
         })
     }
     return (
-        <div className="col-md-7">
+        <div className="col-md-12 mt-2 ">
+            <h3 className="mb-3">Add Services</h3>
             <form onSubmit={handleSubmit}>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Service Title</label>
-                        <input onBlur={handleBlur} type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="title" />
+                <div className="row form-inner">
+                    <div className="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Service Title</label>
+                            <input onBlur={handleBlur} type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="title" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Description</label>
+                            <input onBlur={handleBlur} type="text" class="form-control" name="description" id="exampleInputName1" placeholder="description" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputName1">Description</label>
-                        <input onBlur={handleBlur} type="text" class="form-control" name="description" id="exampleInputName1" placeholder="description" />
-                    </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6">
                         <label for="exampleFormControlFile1">Upload a Icon </label>
                         <input onChange={handleFileChange} type="file" class="form-control-file" id="exampleFormControlFile1" />
                     </div>
-                        <button type="submit" class="btn">Submit</button>
-                </form>
+                </div>
+                    <button type="submit" class="btn btn-admin mt-2 float-right">Submit</button>
+            </form>
         </div>
     );
 };

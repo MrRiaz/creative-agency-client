@@ -4,6 +4,12 @@
   display: inline;
 }
 
+.btn-admin{
+  color: #fff !important;
+  display: inline;
+  background-color: #009444;
+}
+
 .creative-header{
   color: #111430;
 }

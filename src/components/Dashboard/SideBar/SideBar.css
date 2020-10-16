@@ -1,6 +1,15 @@
-.sidebar{
-    position: fixed;
+/* .sidebar{
+    border-right: 1px solid gray;
+    height: 88vh;
+} */
+.list-unstyled li{
+    transition: .3s;
 }
-.sidebar span:hover {
-    transform: scale(1.5);
+.list-unstyled li:hover{
+    transform: translateX(5px);
+    color: #009444 !important;
+}
+.list-unstyled li:active{
+    color: #009444;
+    transform: translateX(0)
 }
