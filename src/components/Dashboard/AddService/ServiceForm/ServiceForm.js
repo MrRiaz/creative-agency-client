@@ -54,7 +54,7 @@ const ServiceForm = () => {
                         <input onChange={handleFileChange} type="file" class="form-control-file" id="exampleFormControlFile1" />
                     </div>
                 </div>
-                    <button type="submit" class="btn btn-admin mt-2 float-right">Submit</button>
+                    <button type="submit" class="btn btn-admin px-4 mt-2 mr-1 float-right">Submit</button>
             </form>
         </div>
     );

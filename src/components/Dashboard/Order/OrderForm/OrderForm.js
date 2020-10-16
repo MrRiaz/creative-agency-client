@@ -62,7 +62,7 @@ const OrderForm = () => {
                 </div>
 
                 <div className="form-group text-right mb-1">
-                    <input type="submit" value="Send" className="btn px-4 float-left" />
+                    <input type="submit" value="Send" className="btn px-5 float-left" />
                 </div>
             </form>
         </div>

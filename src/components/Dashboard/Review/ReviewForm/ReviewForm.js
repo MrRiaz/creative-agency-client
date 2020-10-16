@@ -44,7 +44,7 @@ const ReviewForm = () => {
                 </div>
 
                 <div className="form-group text-right mb-1">
-                    <button type="submit" className="btn px-4">Send</button>
+                    <button type="submit" className="btn px-5">Send</button>
                 </div>
             </form>
         </div>
