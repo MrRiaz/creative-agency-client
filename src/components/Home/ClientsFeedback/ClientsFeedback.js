@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import './Clients.css';
-import Client from '../Client/Client';
+import './ClientsFeedback.css';
+import ClientFeedback from '../ClientFeedback/ClientFeedback';
 import { useState } from 'react';
 
 
@@ -22,7 +22,7 @@ const Clients = () => {
             <h2 className="clients-header text-center">Clients <span className="brand-color">Feedback</span></h2>
             <div className="row">
                 {
-                    clientsfeedback.map(clientsfeedback => <Client feedback={clientsfeedback}></Client>)
+                    clientsfeedback.map(clientsfeedback => <ClientFeedback feedback={clientsfeedback}></ClientFeedback>)
                 }
             </div>
         </section>

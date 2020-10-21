@@ -39,6 +39,14 @@ const Login = () => {
         });
     }
 
+    const handleSignOut = () => {
+        firebase.auth().signOut()
+        .then(res => {
+            setIsLogin(false);
+        })
+        .catch(err => console.log(err))
+    }
+
     const setUserToken = () => {
         firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
         .then(idToken => {

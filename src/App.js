@@ -24,6 +24,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [services, setServices] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
+  
   return (
     <UserContext.Provider value={{login : [loggedInUser, setLoggedInUser], service : [services, setServices], logged: [isLogin, setIsLogin]}}>
     <Router>

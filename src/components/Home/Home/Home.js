@@ -1,6 +1,5 @@
 import React from 'react';
-import SwiperSlider from '../../SwiperSlider/SwiperSlider';
-import Clients from '../Clients/Clients';
+import ClientsFeedback from '../ClientsFeedback/ClientsFeedback';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Partners from '../Partners/Partners';
@@ -15,7 +14,7 @@ const Home = () => {
             <Partners />
             <Services />
             <Portfolio />
-            <Clients />
+            <ClientsFeedback />
             <Footer />
         </div>
     );

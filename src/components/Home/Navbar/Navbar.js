@@ -33,16 +33,21 @@ const Navbar = () => {
                         </li>
                         <div>
                             {
-                                isLogin ? <> 
-                                    <li className="nav-item">
-                                        <Link className="nav-link px-3 py-3 ml-4">
+                                isLogin 
+                                ?   <li class="nav-item dropdown">
+                                        <p className="nav-link ml-4 pt-3 dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {loggedInUser.name}
+                                        </p>
+                                        <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                        <span className="dropdown-item">
                                             <img className="user-logo" src={loggedInUser.img} alt=""/>
-                                        </Link>
+                                        </span>
+                                        <button className="dropdown-item" onClick={() => setIsLogin()}> Log out </button>
+                                        </div>
                                     </li>
-                                </> : 
-                                <li className="nav-item py-3">
-                                    <Link to="/login" className="nav-link btn px-4 py-2 ml-4"> Login </Link>
-                                </li>
+                                :   <li className="nav-item py-3">
+                                        <Link to="/login" className="nav-link btn px-4 py-2 ml-4"> Login </Link>
+                                    </li>
                             }
                         </div>
                     </ul>
