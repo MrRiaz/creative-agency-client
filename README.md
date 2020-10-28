@@ -8,10 +8,11 @@ A full-stack app where you can pick the date and time and fix an appointment wit
 
 ## Features
 
-* Fix an appointment with your doctor
-* Store patient information
-* Review appointments
-* Add prescriptions for each patient
+* This is a service seller full-stack website.
+* This site has an admin’s panel, form where an admin can add a service, add an admin.
+* A User can Order a service. Also, can take a free consultation here.
+* Store User information
+* A User can review any service.
 
 ## Technology: 
 
