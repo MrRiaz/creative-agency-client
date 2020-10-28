@@ -4,7 +4,7 @@
 
 # [Link](https://creative-agency1-bd.web.app "Homepage")
 
-A full-stack app where you can pick the date and time and fix an appointment with your doctor. A doctor can review his appointments and prescribe medicine to a patient.
+A full-stack app where you can order a service. An Admin can review his order and placed his order.
 
 ## Features
 
