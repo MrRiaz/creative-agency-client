@@ -17,6 +17,8 @@ import Review from './components/Dashboard/Review/Review/Review';
 import AddAdmin from './components/Dashboard/AddAdmin/AddAdmin/AddAdmin';
 import AddService from './components/Dashboard/AddService/AddService/AddService';
 import ShowAllOrder from './components/Dashboard/ShowAllOrder/ShowAllOrder/ShowAllOrder';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 
 export const UserContext = createContext();
 
@@ -64,6 +66,10 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    <MessengerCustomerChat
+      pageId="102146781694640"
+      appId="967463083762360"
+    />
     </UserContext.Provider>
   );
 }
